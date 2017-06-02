@@ -8,13 +8,16 @@ import {HomeComponent} from "./home/home.component";
 import {routing} from "./app.routing";
 import {HeaderComponent} from "./header/header.component";
 import {DropdownDirective} from "./shared/dropdown.directive";
+import {MainContentComponent} from "./main-content/main-content.component";
+import {DataService} from "./shared/services/data.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import {DropdownDirective} from "./shared/dropdown.directive";
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

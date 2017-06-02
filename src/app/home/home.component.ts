@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, Output} from "@angular/core";
+import {DataService} from "../shared/services/data.service";
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,13 @@ import {Component} from "@angular/core";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(){}
+  @Output() headerData;
+  @Output() mainData;
+  @Output() name;
+
+  constructor(private ds: DataService){
+    this.name = ds.data.name;
+    this.headerData = ds.data.header;
+    this.mainData = ds.data.main;
+  }
 }
